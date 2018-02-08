@@ -7,6 +7,9 @@ services:
      - '9001:9001'
   nodered:
     image: 'nodered/node-red-docker:latest'
+    volumes:
+     - ./red/data:/data
+     - ./red/public:/home/nol/node-red-static
     ports:
      - '1880:1880'
     depends_on:
@@ -16,3 +19,4 @@ services:
     image: 'mongo:latest'
     ports:
      - '27017:27017'
+    
